@@ -19,6 +19,8 @@ public class ECSMain : MonoBehaviour
         systems.Add(new PlayerInitSystem())
             .Add(new PlayerInputSystem())
             .Add(new PlayerMoveSystem())
+            .Add(new PlayerJumpSystem())
+            .Add(new GroundCheckSystem())
             .Inject(configuration)
             .Inject(sceneData);
         systems.Init();

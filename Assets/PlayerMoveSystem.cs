@@ -12,8 +12,7 @@ public class PlayerMoveSystem : IEcsRunSystem
             ref var player = ref filter.Get1(i);
             ref var input = ref filter.Get2(i);
 
-            Vector2 dir = (Vector2.up * input.moveInput.y + Vector2.right * input.moveInput.x).normalized;
-            player.rb.velocity = player.speed * dir;
+            player.rb.velocity = new Vector2(player.speed * input.moveInput, player.rb.velocity.y);
         }
     }
 }

@@ -11,7 +11,7 @@ public class PlayerInputSystem : IEcsRunSystem
         {
             ref var input = ref filter.Get1(i);
 
-            input.moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            input.moveInput = Input.GetAxis("Horizontal");
         }
     }
 }
